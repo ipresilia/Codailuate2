@@ -3,17 +3,17 @@ class BatchesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-   @batches = user.batches
+   @batches = current_user.batches
   end
 
   def show; end
 
   def new
-   @batch = user.batches.build
+   @batch = current_user.batches.build
   end
 
   def create
-   @batch = user.batches.build(batch_params)
+   @batch = current_user.batches.build(batch_params)
 
    if @batch.save
      redirect_to @batch, notice: "Batch created"
