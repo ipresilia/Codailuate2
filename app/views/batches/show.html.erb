@@ -1,0 +1,13 @@
+<div class="panel">
+
+  <div class="panel-body">
+
+    <p><strong>Full Name:</strong> <%= "Batch #{@batch.number}" %></p>
+    <p><strong>Start Date:</strong> <%= @batch.start_date %></p>
+    <p><strong>End Date:</strong> <%= @batch.end_date %></p>
+
+  </div>
+
+</div>
+
+<%= link_to "Back", batches_path, class: "btn btn-danger" %>

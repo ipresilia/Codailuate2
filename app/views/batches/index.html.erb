@@ -1,0 +1,29 @@
+<div class="row">
+  <!-- <div class="col-md-3">
+    <ul class="sidebar-list">
+      <li class="sidebar-item"><%= link_to "All Batches", batches_path, class: "sidebar-link active" %></li>
+    </ul>
+  </div> -->
+
+  <div class="col-md-12">
+    <div class="panel">
+      <div class="panel-body">
+        <% @batches.each do |batch| %>
+        <div class="row">
+          <div class="col-md-9">
+            <h4><%= "Batch: #{batch.number}" %></h4>
+            <p><%= "#{batch.start_date} - #{batch.end_date}" %></p>
+          </div>
+          <div class="col-md-3 right">
+            <%= link_to "View", batch, class: "btn btn-danger" %>
+            <%= link_to "Update", edit_batch_path(batch), class: "btn btn-danger" %>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+
+    <%= link_to "Add new batch", new_batch_path, class: "btn btn-danger" %>
+  </div>
+</div>
