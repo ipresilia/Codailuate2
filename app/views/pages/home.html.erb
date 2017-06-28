@@ -1,10 +1,20 @@
 <% if user_signed_in? %>
 <div class="container">
-<h1>All Batches</h1>
+
+<div style="text-align: center;">
+
+<h3>You are successfully logged into Codailuate</h3>
+<br>
+
+<h5>Please click <%= link_to "here", batches_path %> to view all Batches</h5>
+</div>
+
 
 
 <!-- WILL HAVE TO CHANGE LATER ON, AND REPLACE WITH SEED DATA -->
-  <div class="row">
+
+<!-- <h1>All Batches</h1> -->
+  <!-- <div class="row">
     <div class="col-md-3">
       <a href="batch1">
         <div class="well">
@@ -90,7 +100,7 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> -->
 
 <%else %>
   <div style="text-align: center;">
