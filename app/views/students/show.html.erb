@@ -1,0 +1,13 @@
+<div class="panel">
+
+  <div class="panel-body">
+
+    <p><strong>Full Name:</strong> <%= "#{@student.full_name}" %></p>
+    <p><strong>Photo:</strong> <%= @student.photo %></p>
+    <p><strong>Last Evaluation:</strong> <%= @student.last_evaluation %></p>
+
+  </div>
+
+</div>
+
+<%= link_to "Back", students_path, class: "btn btn-danger" %>
