@@ -13,11 +13,12 @@ class StudentsController < ApplicationController
     @student = Student.new
   end
 
+# ISSUES CREATING NEW STUDENT
   def create
     @student = Student.new(student_params)
 
     if @student.save
-      redirect_to edit_student_path, notice: "Student created"
+      redirect_to @student, notice: "Student created"
     else
       render :new
     end
