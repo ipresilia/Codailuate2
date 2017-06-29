@@ -6,7 +6,9 @@ class BatchesController < ApplicationController
    @batches = current_user.batches
   end
 
-  def show; end
+  def show
+    @students = @batch.students
+  end
 
   def new
    @batch = current_user.batches.build
