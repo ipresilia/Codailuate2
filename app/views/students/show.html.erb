@@ -28,10 +28,18 @@
         </div>
 
 
-        <h4>Evaluations</h4>
+        <p><strong>All Evaluations</strong></p>
           <% @evaluations.each do |evaluation| %>
             <span class="label"><%= evaluation.color %></span>
           <% end %>
+
+          <form>
+            <div class="form-group">
+              <label for="Remark">Remark</label>
+              <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger">Submit</button>
+          </form>
 
 
       </div>
@@ -41,3 +49,6 @@
   </div>
 </div>
 <%= link_to "Back", :back, class: "btn btn-danger" %>
+
+<!-- NEXT DOES NOT WORK YET -->
+<button type="Next" class="btn btn-danger">Next</button>
