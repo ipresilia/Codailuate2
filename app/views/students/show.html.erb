@@ -28,6 +28,12 @@
         </div>
 
 
+        <h4>Evaluations</h4>
+          <% @evaluations.each do |evaluation| %>
+            <span class="label"><%= evaluation.color %></span>
+          <% end %>
+
+
       </div>
     </div>
 

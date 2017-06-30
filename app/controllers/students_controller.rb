@@ -7,6 +7,7 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+    @evaluations = @student.evaluations
   end
 
   def new
@@ -49,8 +50,6 @@ class StudentsController < ApplicationController
   def student_params
     params
       .require(:student)
-      .permit(
-        :full_name, :photo, :last_evaluation
-      )
+      .permit(:full_name, :photo, :last_evaluation, evaluation_ids: [])
   end
 end
