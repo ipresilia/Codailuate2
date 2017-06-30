@@ -1,9 +1,13 @@
+
 <% if user_signed_in? %>
 <div class="container">
 
 <div style="text-align: center;">
 
-<h3>You are successfully logged into Codailuate</h3>
+<h3>You are successfully logged into</h3>
+<img  class="logo" src="http://res.cloudinary.com/dmj1w2it5/image/upload/v1498743029/codailuate.png" alt="Codailuate Logo">
+
+<br>
 <br>
 
 <h5>Please click <%= link_to "here", batches_path %> to view all Batches</h5>
@@ -23,7 +27,6 @@
         </div>
       </a>
     </div>
-
       <div class="col-md-3">
         <a href="batch2">
           <div class="well">
@@ -32,7 +35,6 @@
           </div>
         </a>
       </div>
-
       <div class="col-md-3">
         <a href="batch3">
           <div class="well">
@@ -41,7 +43,6 @@
           </div>
         </a>
       </div>
-
       <div class="col-md-3">
         <a href="batch4">
           <div class="well">
@@ -51,7 +52,6 @@
         </a>
       </div>
     </div>
-
   <div class="row">
     <div class="col-md-3">
       <a href="batch5">
@@ -61,7 +61,6 @@
         </div>
       </a>
     </div>
-
     <div class="col-md-3">
       <a href="batch6">
         <div class="well">
@@ -70,7 +69,6 @@
         </div>
       </a>
     </div>
-
     <div class="col-md-3">
       <a href="batch7">
         <div class="well">
@@ -79,7 +77,6 @@
         </div>
       </a>
     </div>
-
     <div class="col-md-3">
       <a href="batch8">
         <div class="well">
@@ -89,7 +86,6 @@
       </a>
     </div>
   </div>
-
     <div class="row">
       <div class="col-md-3">
         <a href="batch9">
@@ -105,7 +101,13 @@
 <%else %>
   <div style="text-align: center;">
 
-  <h3>Welcome to Codailuate, Codaisseur's student evaluation system</h3>
+  <h3>Welcome to </h3>
+    <img  class="logo" src="http://res.cloudinary.com/dmj1w2it5/image/upload/v1498743029/codailuate.png" alt="Codailuate Logo">
+
+    <br>
+    <br>
+
+    <h3>Codaisseur's student evaluation system</h3>
   <br>
 
   <h5>Please <%= link_to "Sign In", new_user_session_path%> to view the content</h5>

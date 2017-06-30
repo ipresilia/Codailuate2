@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629001424) do
+ActiveRecord::Schema.define(version: 20170629212806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,21 @@ ActiveRecord::Schema.define(version: 20170629001424) do
     t.index ["user_id"], name: "index_batches_on_user_id"
   end
 
+  create_table "evaluations", force: :cascade do |t|
+    t.string "color"
+    t.date "date"
+    t.text "remark"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "evaluations_students", id: false, force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.bigint "evaluation_id", null: false
+    t.index ["evaluation_id", "student_id"], name: "index_evaluations_students_on_evaluation_id_and_student_id"
+    t.index ["student_id", "evaluation_id"], name: "index_evaluations_students_on_student_id_and_evaluation_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "full_name"
     t.string "photo"
@@ -32,7 +47,9 @@ ActiveRecord::Schema.define(version: 20170629001424) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "batch_id"
+    t.bigint "user_id"
     t.index ["batch_id"], name: "index_students_on_batch_id"
+    t.index ["user_id"], name: "index_students_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,4 +71,5 @@ ActiveRecord::Schema.define(version: 20170629001424) do
 
   add_foreign_key "batches", "users"
   add_foreign_key "students", "batches"
+  add_foreign_key "students", "users"
 end
