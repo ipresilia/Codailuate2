@@ -1,0 +1,26 @@
+<%= form_for @student do |f| %>
+  <div class="form-group">
+    <label>Student's Full Name</label>
+  <%= f.text_field :full_name, placeholder: "Student's Full Name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Photo</label>
+    <%= f.text_field :photo, prompt: "Student Photo", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Last Evaluation</label>
+    <%= f.select :last_evaluation, ["red", "yellow", "green"], prompt: "Select last evaluation", class: "form-control" %>
+  </div>
+
+
+<!-- NOT YET USED -->
+  <label>Colors</label>
+
+<!-- NEED TO ADD COLORS AND FIND A WAY TO INCORPORATE THEM INTO THIS FORM -->
+
+  <div class="actions">
+    <%= f.submit "Save", class: "btn btn-danger" %>
+  </div>
+<% end %>

@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :students
   resources :users, only: [:show]
   resources :batches, except: [:destroy]
+  resources :students
 
 end

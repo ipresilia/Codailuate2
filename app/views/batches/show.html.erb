@@ -2,10 +2,18 @@
 
   <div class="panel-body">
 
-    <p><strong>Full Name:</strong> <%= "Batch #{@batch.number}" %></p>
-    <p><strong>Start Date:</strong> <%= @batch.start_date %></p>
-    <p><strong>End Date:</strong> <%= @batch.end_date %></p>
+    <p><h4>Full Name:</h4> <%= "Batch #{@batch.number}" %></p>
+    <p><h4>Start Date:</h4> <%= @batch.start_date %></p>
+    <p><h4>End Date:</h4> <%= @batch.end_date %></p>
 
+    <h4>Students:</h4>
+      <% @students.each do |student| %>
+        <div class="list-group">
+          <!-- <button type="button" class="list-group-item"><%= student.full_name %></button> -->
+
+          <%= link_to "#{student.full_name}", student, class: "btn list-group-item" %>
+        </div>
+      <% end %>
   </div>
 
 </div>
